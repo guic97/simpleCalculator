@@ -1,15 +1,16 @@
 <template>
   <div>
-    <div><input-cadastro/></div>
+    <div><clicarNum/></div>
   </div> 
 </template>
 
 <script>
-  import inputCadastro from "./components/cadastro/inputCadastro.vue"
-export default {  
+  import clicarNum from "./components/clicarNum.vue";
+  export default {  
   name:'App',
   components:{
     inputCadastro,
+    clicarNum,
   },
 }
 </script>
