@@ -51,7 +51,7 @@
 
 <script>
 export default {
-    name: 'clicarNum',
+    name: 'calculadora',
     data(){
         return{
             valor: '0',
