@@ -17,7 +17,6 @@
     siteHeader,
     calculator,
     siteFooter,
-    
   },
 }
 </script>

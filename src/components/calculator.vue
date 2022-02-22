@@ -49,62 +49,65 @@ export default {
     methods: {
       activateNumber: function(value){
         if(isNaN(value)==false && value!=0){
-          this.result+=String(value)
-          this.result=parseFloat(this.result)
+          if (this.op=='-' && this.numberValue=='0') {
+          this.result=String(this.op+value);
+          this.op='0';
           }else
-            if(value==0){
-              this.result+=String(value)
+            this.result+=String(value);
+            this.result=parseFloat(this.result);
+            }else
+              if(value==0){
+                this.result+=String(value);
+                }else
+                  if(value=='.' && this.repeatDot==true){
+                    this.result+=String(value);
+                    this.repeatDot=false;
+                  }  
+        this.value=value;
+      },
+      activateOp: function(op){
+        this.repeatDot=true;
+        if(this.numberValue!='0' && this.result!='0'){
+          if(this.op=='+')
+            this.numberValue=parseFloat(this.numberValue)+parseFloat(this.result);
+            else
+              if(this.op=='-')
+                this.numberValue=parseFloat(this.numberValue)-parseFloat(this.result);
+                else
+                  if(this.op=='x')
+                    this.numberValue=parseFloat(this.numberValue)*parseFloat(this.result);
+                    else
+                      if(this.op=='/')
+                        this.numberValue=parseFloat(this.numberValue)/parseFloat(this.result);
+                        else
+                          if(this.op=='%') 
+                            this.numberValue=parseFloat(this.numberValue)*(parseFloat(this.result)/100);
+                            else
+                              if(this.op=='^')
+                                this.numberValue=parseFloat(this.numberValue)**parseFloat(this.result);
               }else
-                if(value=='.' && this.repeatDot==true){
-                  this.result+=String(value)
-                  this.repeatDot=false
-                }  
-        this.value=value
+                if(this.result!='0'){
+                  this.numberValue=parseFloat(this.result);
+                }
+        this.result='0';
+        this.op=op;    
       },
       activateRoot: function(op){
         if(op=='√' && this.result!='0'){
-          this.numberValue=parseFloat(this.result)
-          this.numberValue=Math.sqrt(this.result)
+          this.numberValue=parseFloat(this.result);
+          this.numberValue=Math.sqrt(this.result);
         }
         if(op!='0' && this.result!='0' && this.numberValue!='0'){
-          this.result='0'
+          this.result='0';
         }
-        this.op=op
-      },
-      activateOp: function(op){
-        this.repeatDot=true
-        if(this.numberValue!='0' && this.result!='0'){
-          if(this.op=='+')
-            this.numberValue=parseFloat(this.numberValue)+parseFloat(this.result)
-            else
-              if(this.op=='-')
-                this.numberValue=parseFloat(this.numberValue)-parseFloat(this.result)
-                else
-                  if(this.op=='x')
-                    this.numberValue=parseFloat(this.numberValue)*parseFloat(this.result)
-                    else
-                      if(this.op=='/')
-                        this.numberValue=parseFloat(this.numberValue)/parseFloat(this.result)
-                        else
-                          if(this.op=='%') 
-                            this.numberValue=parseFloat(this.numberValue)*(parseFloat(this.result)/100)
-                            else
-                              if(this.op=='^')
-                                this.numberValue=parseFloat(this.numberValue)**parseFloat(this.result)
-              }else
-                if(this.result!='0'){
-                  this.numberValue=parseFloat(this.result)
-                  this.result='0'
-                }
-        this.result='0'
-        this.op=op        
+        this.op=op;
       },
       erase: function(){
-        this.op='0'
-        this.value='0'
-        this.result='0'
-        this.numberValue='0'
-        this.repeatDot=true
+        this.op='0';
+        this.value='0';
+        this.result='0';
+        this.numberValue='0';
+        this.repeatDot=true;
       },
     }
 }
