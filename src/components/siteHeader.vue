@@ -1,11 +1,7 @@
 <template>
   <main>
     <nav class="flexWrap">
-      <ul class="flexWrap">
-        <li>Home</li>
-        <li>About</li>
-        <li>Suport</li>
-      </ul>
+      <h1>Calculadora</h1>
     </nav>
   </main>  
 </template>
@@ -18,20 +14,17 @@ export default {
 
 <style scoped>
   main{
-    background-color: var(--color2);
+    background-color: var(--color3);
+  }
+  nav{
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+  }
+  nav > h1{
+    font-size: 30px;
+    font-weight: bolder;
+    text-shadow: 1px 1px 1px var(--color5);
     color: var(--color1);
-  }
-   nav{
-    height: 50px;
-    align-content: center;
-    justify-content: flex-start;
-    margin-left: 15px;
-  }
-  nav > ul{ 
-    list-style-type: none;
-  }
-  ul li{
-    margin: 0 10px;
-    text-shadow: 0px 1px 10px black;
   }
 </style>

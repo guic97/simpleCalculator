@@ -24,11 +24,11 @@
 <style>
   :root{
     --standardFont: Arial, Helvetica, sans-serif;
-    --color1: #F6F4F3;
-    --color2: #1b998ace;
-    --color3: #276FBF;
-    --color4: #183059;
-    --color5: #a62b2b;
+    --color1: #ffffff;
+    --color2: #47cebece;
+    --color3: #4483ca;
+    --color4: #3f6bb8;
+    --color5: rgb(29, 29, 29);
   }
   *{
     margin: 0px;

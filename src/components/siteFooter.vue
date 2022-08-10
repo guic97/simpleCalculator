@@ -18,21 +18,20 @@ export default {
 
 <style scoped>
   footer{
-    background-color: var(--color2);
+    background-color: var(--color3);
     color: var(--color1);
     height: 100px;
     justify-content: center;
     align-items: center;
   }
-  footer > ul >li{
+  a, footer > ul >li{
     list-style-type: none;
     margin: 0 10px;
-  }
-  a{
     text-decoration: none;
     color: var(--color1);
+    font-weight: bold;
   }
   a:hover{
-    color: var(--color3);
+    color: var(--color5);
   }
 </style>

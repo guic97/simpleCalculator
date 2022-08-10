@@ -118,7 +118,7 @@ export default {
     background-color: var(--color5);
   }
   .mainLayout{
-    padding: 50px 0px;
+    padding: 30px 0px;
     background-color: var(--color1);
     min-width: 200px;
     max-width: 800px;
